@@ -1,12 +1,12 @@
 <?php
 
-namespace VendorName\Skeleton\Commands;
+namespace LaraUtil\AdminUser\Commands;
 
 use Illuminate\Console\Command;
 
-class SkeletonCommand extends Command
+class AdminUserCommand extends Command
 {
-    public $signature = 'skeleton';
+    public $signature = 'admin-user';
 
     public $description = 'My command';
 

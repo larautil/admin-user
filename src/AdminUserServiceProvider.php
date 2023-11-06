@@ -1,12 +1,12 @@
 <?php
 
-namespace VendorName\Skeleton;
+namespace LaraUtil\AdminUser;
 
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use VendorName\Skeleton\Commands\SkeletonCommand;
+use LaraUtil\AdminUser\Commands\AdminUserCommand;
 
-class SkeletonServiceProvider extends PackageServiceProvider
+class AdminUserServiceProvider extends PackageServiceProvider
 {
     public function configurePackage(Package $package): void
     {
@@ -16,10 +16,10 @@ class SkeletonServiceProvider extends PackageServiceProvider
          * More info: https://github.com/spatie/laravel-package-tools
          */
         $package
-            ->name('skeleton')
+            ->name('admin-user')
             ->hasConfigFile()
             ->hasViews()
-            ->hasMigration('create_skeleton_table')
-            ->hasCommand(SkeletonCommand::class);
+            ->hasMigration('create_admin-user_table')
+            ->hasCommand(AdminUserCommand::class);
     }
 }
