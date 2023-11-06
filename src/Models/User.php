@@ -2,13 +2,13 @@
 
 namespace LaraUtil\AdminUser\Models;
 
+use Encore\Admin\Auth\Database\HasPermissions;
+use Encore\Admin\Traits\DefaultDatetimeFormat;
 use Illuminate\Auth\Authenticatable;
 use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Support\Facades\Storage;
-use Encore\Admin\Traits\DefaultDatetimeFormat;
-use Encore\Admin\Auth\Database\HasPermissions;
 
 /**
  * Class Administrator.
@@ -18,15 +18,13 @@ use Encore\Admin\Auth\Database\HasPermissions;
 class User extends Model implements AuthenticatableContract
 {
     use Authenticatable;
-    use HasPermissions;
     use DefaultDatetimeFormat;
+    use HasPermissions;
 
     protected $fillable = ['username', 'password', 'name', 'avatar'];
 
     /**
      * Create a new Eloquent model instance.
-     *
-     * @param array $attributes
      */
     public function __construct(array $attributes = [])
     {
@@ -42,8 +40,7 @@ class User extends Model implements AuthenticatableContract
     /**
      * Get avatar attribute.
      *
-     * @param string $avatar
-     *
+     * @param  string  $avatar
      * @return string
      */
     public function getAvatarAttribute($avatar)
@@ -65,8 +62,6 @@ class User extends Model implements AuthenticatableContract
 
     /**
      * A user has and belongs to many roles.
-     *
-     * @return BelongsToMany
      */
     public function roles(): BelongsToMany
     {
@@ -79,8 +74,6 @@ class User extends Model implements AuthenticatableContract
 
     /**
      * A User has and belongs to many permissions.
-     *
-     * @return BelongsToMany
      */
     public function permissions(): BelongsToMany
     {
