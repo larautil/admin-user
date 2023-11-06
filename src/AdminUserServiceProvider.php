@@ -2,9 +2,9 @@
 
 namespace LaraUtil\AdminUser;
 
+use LaraUtil\AdminUser\Commands\AdminUserCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use LaraUtil\AdminUser\Commands\AdminUserCommand;
 
 class AdminUserServiceProvider extends PackageServiceProvider
 {
